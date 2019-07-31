@@ -1,11 +1,10 @@
 import React from 'react'
-import { analyzeTweet } from '../core/actions/tweet'
+import { analyzeTweet } from '../../core/actions/tweet'
 import { connect } from 'react-redux'
 
 const AnalysisForm = (props) => {
     const onFormSubmit = (e) => {
         e.preventDefault()
-
         props.analyzeTweet(e.target.tweetText.value)
     }
     

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import App from './App'
+import AnalysisViewer from './components/AnalysisViewer/AnalysisViewer';
 import configureStore from './core/store/store'
 import * as serviceWorker from './serviceWorker'
 
@@ -9,7 +9,7 @@ const store = configureStore()
 
 let app = (
     <Provider store={store}>
-        <App />
+        <AnalysisViewer className="a"/>
     </Provider>
 )
 
