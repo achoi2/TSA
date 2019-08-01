@@ -5,21 +5,26 @@ class AnalysisGraph extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            tones: null
+            tones: []
         }
     }
     
     componentDidUpdate(prevProps, prevState) {
         if (prevProps !== this.props) {
-            this.setState({ tones: this.props })
+            this.setState({ tones: this.props.tones })
         }
     }
     
     
     render() {
         return (
-            <div>
-                graph
+            <div> 
+              {this.state.tones.map(tone => 
+                  <div key={tone.num}>
+                    <li>{tone.score}</li>
+                    <li>{tone.tone_id}</li>
+                  </div>
+              )}  
             </div>
         )
     }

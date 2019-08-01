@@ -17,7 +17,7 @@ export const analyzeTweet = (tweet) => async dispatch => {
         })
 
         const anlayzed = await analyze.json()
-        dispatch(analyzedTweet(anlayzed.document_tone.tones))
+        dispatch(analyzedTweet(anlayzed))
     } catch(e) {
         console.log(e)
     }
