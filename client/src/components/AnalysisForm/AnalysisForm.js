@@ -7,9 +7,8 @@ const AnalysisForm = (props) => {
     const onFormSubmit = (e) => {
         e.preventDefault()
         props.analyzeTweet(e.target.tweetText.value)
-        
     }
-    
+
     return(
         <div>
             <form onSubmit={onFormSubmit} className="analyze-form">
@@ -23,5 +22,7 @@ const AnalysisForm = (props) => {
 const mapDispatchToProps = dispatch => ({
     analyzeTweet: (tweet) => dispatch(analyzeTweet(tweet))
 })
+
+
 
 export default connect(null, mapDispatchToProps)(AnalysisForm);

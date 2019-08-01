@@ -1,7 +1,11 @@
-export const analyzeTweet = (tweet) => async dispatch => {
+export const analyzedTweet = (tones) => ({
+    type: 'ANALYZED_TONES',
+    tones
+})
 
+export const analyzeTweet = (tweet) => async dispatch => {
     try {
-        await fetch('/tweet/analyze', {
+        const analyze = await fetch('/tweet/analyze', {
             method: 'Post',
             headers: {
                 'Accept': 'application/json',
@@ -11,6 +15,9 @@ export const analyzeTweet = (tweet) => async dispatch => {
                 tweet
             })
         })
+
+        const anlayzed = await analyze.json()
+        dispatch(analyzedTweet(anlayzed.document_tone.tones))
     } catch(e) {
         console.log(e)
     }
