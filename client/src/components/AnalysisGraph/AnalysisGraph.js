@@ -21,9 +21,9 @@ class AnalysisGraph extends Component {
     render() {
         return (
             <div>
-                <VictoryChart style={{ parent: { height: "2em" }}} domainPadding={20}>
+                <VictoryChart style={{ parent: { height: "2em" }}} height={200} width={200} domainPadding={null}>
                     <VictoryAxis tickFormat={["joy", "fear", "sadness", "anger", "analytical", "confident", "tentative"]}/>
-                    <VictoryBar data={this.state.tones} x="tone_id" y="score" width={5} height={5} />
+                    <VictoryBar data={this.state.tones} x="tone_id" y="score"  />
                 </VictoryChart>
             </div>
         )
