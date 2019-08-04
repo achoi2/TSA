@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { VictoryBar, VictoryChart, VictoryAxis } from 'victory'
+
 
 class AnalysisGraph extends Component {
     constructor(props) {
@@ -18,13 +20,11 @@ class AnalysisGraph extends Component {
     
     render() {
         return (
-            <div> 
-              {this.state.tones.map(tone => 
-                  <div key={tone.num}>
-                    <li>{tone.score}</li>
-                    <li>{tone.tone_id}</li>
-                  </div>
-              )}  
+            <div>
+                <VictoryChart style={{ parent: { height: "2em" }}} domainPadding={20}>
+                    <VictoryAxis tickFormat={["joy", "fear", "sadness", "anger", "analytical", "confident", "tentative"]}/>
+                    <VictoryBar data={this.state.tones} x="tone_id" y="score" width={5} height={5} />
+                </VictoryChart>
             </div>
         )
     }
