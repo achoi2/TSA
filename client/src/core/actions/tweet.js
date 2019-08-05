@@ -15,9 +15,13 @@ export const analyzeTweet = (tweet) => async dispatch => {
                 tweet
             })
         })
-
         const anlayzed = await analyze.json()
-        dispatch(analyzedTweet(anlayzed))
+        
+        if (anlayzed.length === 0 ) {
+            dispatch(analyzedTweet(null))
+        } else {
+            dispatch(analyzedTweet(anlayzed))
+        }
     } catch(e) {
         console.log(e)
     }

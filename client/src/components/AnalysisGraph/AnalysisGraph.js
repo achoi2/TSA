@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { VictoryBar, VictoryChart, VictoryAxis } from 'victory'
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from 'victory'
 
 
 class AnalysisGraph extends Component {
@@ -10,23 +10,25 @@ class AnalysisGraph extends Component {
             tones: []
         }
     }
-    
+
     componentDidUpdate(prevProps, prevState) {
-        if (prevProps !== this.props) {
-            this.setState({ tones: this.props.tones })
-        }
+        if (prevProps !== this.props) return this.setState({ tones: this.props.tones })
     }
     
-    
     render() {
-        return (
+        if (this.state.tones === null) {
+            return <div>{"Tones do not exist. Write another Sentence"}</div>
+        } else {
+            return (
             <div>
-                <VictoryChart style={{ parent: { height: "2em" }}} height={200} width={200} domainPadding={null}>
+                <VictoryChart style={{ parent: { height: "2em" }}} height={340} width={600} domainPadding={20} theme={VictoryTheme.material}>
                     <VictoryAxis tickFormat={["joy", "fear", "sadness", "anger", "analytical", "confident", "tentative"]}/>
+                    <VictoryAxis dependentAxis tickFormat={[.1, .2, .3, .4, .5, .6, .7, .8, .9, 1.0 ]}/>
                     <VictoryBar data={this.state.tones} x="tone_id" y="score"  />
                 </VictoryChart>
             </div>
         )
+        }  
     }
 }
 
