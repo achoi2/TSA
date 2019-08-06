@@ -20,18 +20,18 @@ const analyze_tweet = async (req, res) => {
         // analyzedTones.forEach((tone, i) => tone.num = i + 1)
 
         // res.send(JSON.stringify(analyzedTones))  
-        // const arr = [{
-        //     "score": 0.514253,
-        //     "tone_id": "sadness",
-        //     "tone_name": "Sadness",
-        //     "num": 1
-        // }, {
-        //     "score": 0.88939,
-        //     "tone_id": "tentative",
-        //     "tone_name": "Tentative",
-        //     "num": 2
-        // }]
-        res.send([])
+        const arr = [{
+            "score": 0.514253,
+            "tone_id": "sadness",
+            "tone_name": "Sadness",
+            "num": 1
+        }, {
+            "score": 0.88939,
+            "tone_id": "tentative",
+            "tone_name": "Tentative",
+            "num": 2
+        }]
+        res.send(arr)
          
     } catch(e) {
         res.send(e)

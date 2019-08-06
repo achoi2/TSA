@@ -3,6 +3,16 @@ export const analyzedTweet = (tones) => ({
     tones
 })
 
+export const tweet_text = (tweet) => ({
+    type: 'TWEET_TEXT',
+    tweet
+})
+
+export const tweetText = (tweet) => dispatch => {
+    dispatch(tweet_text(tweet))
+}
+
+
 export const analyzeTweet = (tweet) => async dispatch => {
     try {
         const analyze = await fetch('/tweet/analyze', {
@@ -25,5 +35,5 @@ export const analyzeTweet = (tweet) => async dispatch => {
     } catch(e) {
         console.log(e)
     }
-  
 }
+

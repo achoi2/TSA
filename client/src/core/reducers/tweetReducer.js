@@ -1,5 +1,6 @@
 const initalState = {
-    tones: []
+    tones: [],
+    tweet: ''
 }
 
 export default (state = initalState, action) => {
@@ -8,6 +9,11 @@ export default (state = initalState, action) => {
             return {
                 ...state,
                 tones: action.tones
+            }
+        case 'TWEET_TEXT':
+            return {
+                ...state,
+                tweet: action.tweet
             }
         
         default:
