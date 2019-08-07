@@ -12,6 +12,22 @@ export const tweetText = (tweet) => dispatch => {
     dispatch(tweet_text(tweet))
 }
 
+export const saveTweet = (tweet) => async dispatch => {
+    try {
+        await fetch('/tweet/save', {
+            method: 'Post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                tweet
+            })
+        })
+    } catch(e) {
+        console.log(e)
+    }
+}
 
 export const analyzeTweet = (tweet) => async dispatch => {
     try {
@@ -27,7 +43,7 @@ export const analyzeTweet = (tweet) => async dispatch => {
         })
         const anlayzed = await analyze.json()
         
-        if (anlayzed.length === 0 ) {
+        if (anlayzed.length === 0) {
             dispatch(analyzedTweet(null))
         } else {
             dispatch(analyzedTweet(anlayzed))

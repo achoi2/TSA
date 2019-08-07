@@ -6,6 +6,11 @@ const toneAnalyzer = new ToneAnalyzerV3({
     iam_apikey: `${keys.apiKey}`,
 });
 
+const save_tweet = (req, res) => {
+    const tweet = req.body.tweet
+    console.log(tweet)
+}
+
 const analyze_tweet = async (req, res) => {
     const tweet = req.body.tweet
 
@@ -39,5 +44,6 @@ const analyze_tweet = async (req, res) => {
 } 
 
 module.exports = {
-    analyze_tweet
+    analyze_tweet,
+    save_tweet
 }
