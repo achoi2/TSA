@@ -1,14 +1,21 @@
 const keys = require('../keys')
-const ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
+const ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3')
+const pool = require('../database/queries')
 
 const toneAnalyzer = new ToneAnalyzerV3({
     version: '2017-09-21',
     iam_apikey: `${keys.apiKey}`,
 });
 
-const save_tweet = (req, res) => {
+const save_tweet = async (req, res) => {
     const tweet = req.body.tweet
     console.log(tweet)
+    try {
+        await pool.query('INSERT INTO tweet (tweet) VALUES ($1)', [tweet])
+        res.send('success!')
+    } catch(e) {
+        res.send(e)
+    }
 }
 
 const analyze_tweet = async (req, res) => {
