@@ -53,3 +53,20 @@ export const analyzeTweet = (tweet) => async dispatch => {
     }
 }
 
+export const postTweet = (tweet) => async dispatch => {
+    try {
+        await fetch('/twitter/post', {
+            method: 'Post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                tweet
+            })
+        })
+    } catch (e) {
+        console.log(e)
+    }
+}
+
