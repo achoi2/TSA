@@ -1,12 +1,35 @@
 .twitter-buttons {
     margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.twitter-text {
+    margin-bottom: 1em;
+    font-weight: 700em;
+    font-size: 2em;
 }
 
 
 .savetweet-button {
-    margin-left: 1em;
+    cursor: pointer;
+    margin-left: 2em;
+    background-color: rgb(29, 161, 242);
+    color: white;
+    border-radius: 2em;
+    height: 3.2em;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 1em;
 }
 
-.twitter-text {
-    padding-bottom: 1em;
+.twitter-button {
+    cursor: pointer;
+    background-color: rgb(29, 161, 242);
+    color: white;
+    border-radius: 2em;
+    height: 3.2em;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 1em;
 }
+

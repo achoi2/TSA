@@ -17,7 +17,7 @@ const TwitterButtons = (props) => {
     return (
         <div className="twitter-buttons">
             <div className="twitter-text">{props.tweet}</div>
-            <button onClick={postTweetHandler}>Submit to Twitter</button>
+            <button onClick={postTweetHandler} className="twitter-button">Submit to Twitter</button>
             <button className="savetweet-button" onClick={saveTweetHandler}>Save Tweet</button>
         </div>
     )
