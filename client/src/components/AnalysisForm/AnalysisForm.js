@@ -14,7 +14,7 @@ const AnalysisForm = (props) => {
     return(
         <div>
             <form onSubmit={onFormSubmit} className="analyze-form">
-                <textarea type="text" placeholder="Analyze my tweet" name="tweetText"/>
+                <textarea type="text" placeholder="Analyze my tweet" name="tweetText" className="twitter-textarea"/>
                 <button className="analyze-button">Analyze</button>
             </form>
         </div>

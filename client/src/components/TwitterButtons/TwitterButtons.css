@@ -7,6 +7,7 @@
     margin-bottom: 1em;
     font-weight: 700em;
     font-size: 2em;
+    color: white;
 }
 
 
@@ -20,6 +21,7 @@
     font-weight: 700;
     font-size: 1em;
     padding: 1em;
+    outline: none;
 }
 
 .twitter-button {
@@ -31,5 +33,6 @@
     font-weight: 700;
     font-size: 1em;
     padding: 1em;
+    outline: none;
 }
 
