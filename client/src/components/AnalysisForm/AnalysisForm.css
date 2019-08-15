@@ -23,11 +23,11 @@
 .twitter-textarea {
     outline: none;
     background-color: rgb(21, 32, 43);
-    border: none;
     resize: none;
     height: 5em;
     color: white;
     font-size: 1em;
     width: 20em;
+    border-color: rgb(56, 68, 77);
 }
 

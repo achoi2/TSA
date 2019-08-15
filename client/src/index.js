@@ -9,7 +9,7 @@ const store = configureStore()
 
 let app = (
     <Provider store={store}>
-        <AnalysisViewer className="a"/>
+        <AnalysisViewer />
     </Provider>
 )
 
